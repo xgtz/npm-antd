@@ -45,7 +45,8 @@ class BasicTable extends Component{
                 columns={this.props.columns}
                 dataSource={this.props.dataSource}
                 size="small"
-                scroll={{ y: this.props.yscroll }}
+                bordered
+                scroll={{ x: this.props.xscroll,y: this.props.yscroll }}
                 pagination={ this.props.pagination}
                 rowSelection={this.props.rowSelection === false?null:rowSelection}
                 onRow={(record,index) =>{

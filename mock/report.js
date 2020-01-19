@@ -4,7 +4,8 @@ for(let i=0;i< 2000; i++){
         key:i,
         name:`Edward King ${i}`,
         age:i+1,
-        address:`Lodon, Park Lane no. ${i}`
+        address:`Lodon, Park Lane no. ${i}`,
+        perfact:`Footbal Backerbll no. ${i}`
     });
 }
 
@@ -22,6 +23,11 @@ const columns =[
     {
         title:'地址',
         dataIndex:'address',
+        width:300
+    },
+    {
+        title:'喜好',
+        dataIndex:'perfact',
         width:300
     }
 ]

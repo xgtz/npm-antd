@@ -22,6 +22,7 @@ class Report extends Component{
     constructor(props){
         super(props);
         this.state={
+            deskDivWidth: document.body.clientWidth,
             deskDivHeight:document.body.clientHeight,
             selectedKey:'',
             selectedRowKeys:[],
@@ -69,10 +70,11 @@ class Report extends Component{
         })
     }
     render(){
-        const {deskDivHeight,selectedKey,selectedRowKeys} = this.state;
+        const {deskDivHeight,deskDivWidth,selectedKey,selectedRowKeys} = this.state;
         const { reportLoading,reportColumns,reportDataSource,reportDataCount} = this.props;
         
         let columns = this.handleColumns(reportColumns);
+        let xWidth = deskDivWidth*0.5-2;
         let yheight = deskDivHeight - 160;
         const  pagination = {
             ...Pagination,
@@ -103,6 +105,7 @@ class Report extends Component{
                                 <BasicTable 
                                     rowSelection="checkbox"
                                     pagination={pagination}
+                                    xscroll={xWidth}
                                     yscroll={yheight }
                                     that={this}
                                     selectedKey={selectedKey}
